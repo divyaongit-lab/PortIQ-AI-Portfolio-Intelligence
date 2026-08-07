@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { --sidebar-width: 240px; --topbar-height: 56px; }
+  body { @apply bg-navy-950 text-surface-50 font-sans antialiased; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-navy-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-navy-600 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-gin-600; }
+}
+
+@layer components {
+  .card { @apply bg-navy-800 border border-navy-700 rounded-xl shadow-card; }
+  .card-hover { @apply card transition-all duration-200 hover:border-gin-600 hover:shadow-card-hover cursor-pointer; }
+  .nav-item { @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium text-surface-200 transition-all duration-150 hover:bg-navy-700 hover:text-surface-50; }
+  .nav-item-active { @apply nav-item bg-navy-700 text-gin-400 border-l-2 border-gin-400; }
+  .gin-divider { @apply h-px bg-gradient-to-r from-transparent via-gin-500 to-transparent opacity-30; }
+  .margin-badge-high { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono font-medium bg-gin-500/20 text-gin-400 border border-gin-500/30; }
+  .margin-badge-mid  { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono font-medium bg-margin-500/20 text-margin-400 border border-margin-500/30; }
+  .margin-badge-low  { @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-mono font-medium bg-loss-500/20 text-loss-400 border border-loss-500/30; }
+}
